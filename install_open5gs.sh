@@ -10,8 +10,16 @@ echo "============================================="
 
 # 1. Sistem Güncellemesi ve Temel Bağımlılıklar
 echo "[1/5] Sistem güncelleniyor ve derleme araçları kuruluyor..."
+
+# Tüm interaktif pencereleri tamamen kapatıyoruz
+export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+sudo apt-get upgrade -y
+
+# iptables-persistent kurulumunda çıkan mavi ekranları otomatik "Yes" olarak geçmek için cevapları önceden tanımlıyoruz:
+echo iptables-persistent iptables-persistent/autosave_v4 boolean true | sudo debconf-set-selections
+echo iptables-persistent iptables-persistent/autosave_v6 boolean true | sudo debconf-set-selections
+
 sudo apt-get install -y software-properties-common curl git build-essential cmake ninja-build \
     python3-pip python3-setuptools python3-wheel meson net-tools iptables iptables-persistent
 
