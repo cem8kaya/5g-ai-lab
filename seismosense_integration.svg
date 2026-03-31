@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="340" viewBox="0 0 900 340">
+<style>
+  .lbl  { font: 500 12px 'Segoe UI', sans-serif; fill: #1a1a2e; }
+  .sub  { font: 400 10px 'Segoe UI', sans-serif; fill: #4a5568; }
+  .mono { font: 400 10px 'Courier New', monospace; fill: #2d3748; }
+  .note { font: 400 9px  'Segoe UI', sans-serif; fill: #718096; }
+  .head { font: 600 12px 'Segoe UI', sans-serif; fill: #ffffff; }
+  .arr  { stroke: #a0aec0; stroke-width: 1.5; fill: none; marker-end: url(#a); }
+  .arr-p{ stroke: #805ad5; stroke-width: 1.8; fill: none; marker-end: url(#ap); }
+  .arr-g{ stroke: #38a169; stroke-width: 1.5; fill: none; marker-end: url(#ag); }
+</style>
+<defs>
+  <marker id="a"  viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M1 1L7 4L1 7" fill="none" stroke="#a0aec0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <marker id="ap" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M1 1L7 4L1 7" fill="none" stroke="#805ad5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <marker id="ag" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M1 1L7 4L1 7" fill="none" stroke="#38a169" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<rect width="900" height="340" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<rect x="0" y="0" width="900" height="40" rx="12" fill="#1a1a2e"/>
+<rect x="0" y="28" width="900" height="12" fill="#1a1a2e"/>
+<text x="24" y="24" font="600 13px 'Segoe UI', sans-serif" fill="#ffffff">SeismoSense → 5G Core Integration</text>
+<text x="620" y="24" font="400 10px 'Segoe UI', sans-serif" fill="#a0aec0">iPhone CoreMotion · STA/LTA · IoT sensor bearer</text>
+
+<!-- iPhone block -->
+<rect x="20" y="55" width="148" height="160" rx="10" fill="#faf5ff" stroke="#805ad5" stroke-width="1.5"/>
+<text x="94" y="75" text-anchor="middle" class="lbl" fill="#553c9a">iPhone</text>
+<text x="94" y="90" text-anchor="middle" class="sub">SeismoSense app</text>
+<line x1="30" y1="96" x2="158" y2="96" stroke="#e9d8fd" stroke-width="0.8"/>
+<text x="36" y="112" class="mono">CoreMotion</text>
+<text x="36" y="126" class="mono">AccelX/Y/Z</text>
+<text x="36" y="140" class="sub">100Hz sampling</text>
+<text x="36" y="158" class="mono">STA/LTA</text>
+<text x="36" y="172" class="sub">Motion detection</text>
+<text x="36" y="190" class="sub">Alert threshold 3.0</text>
+<text x="36" y="206" class="sub">batch = 10 samples</text>
+
+<!-- Arrow 1 -->
+<line x1="168" y1="130" x2="200" y2="130" class="arr-p"/>
+<text x="184" y="120" text-anchor="middle" class="note">HTTP POST</text>
+<text x="184" y="142" text-anchor="middle" class="note">JSON batch</text>
+
+<!-- Flask block -->
+<rect x="200" y="55" width="168" height="160" rx="10" fill="#e6fffa" stroke="#2c7a7b" stroke-width="1.5"/>
+<text x="284" y="75" text-anchor="middle" class="lbl" fill="#2c7a7b">Flask Collector</text>
+<text x="284" y="90" text-anchor="middle" class="sub">GCP :8080</text>
+<line x1="210" y1="96" x2="358" y2="96" stroke="#b2f5ea" stroke-width="0.8"/>
+<text x="216" y="112" class="mono">POST /api/v1/sensor</text>
+<text x="216" y="126" class="mono">GET  /api/v1/status</text>
+<text x="216" y="140" class="mono">GET  /api/v1/events</text>
+<text x="216" y="158" class="sub">STA/LTA engine</text>
+<text x="216" y="172" class="sub">Alert state machine</text>
+<text x="216" y="188" class="sub">Batch processing</text>
+<text x="216" y="204" class="sub">Heartbeat monitor</text>
+
+<!-- Arrow 2 -->
+<line x1="368" y1="130" x2="400" y2="130" class="arr"/>
+<text x="384" y="120" text-anchor="middle" class="note">insert</text>
+
+<!-- MongoDB block -->
+<rect x="400" y="55" width="148" height="160" rx="10" fill="#f7f8fa" stroke="#a0aec0" stroke-width="1.2"/>
+<text x="474" y="75" text-anchor="middle" class="lbl">MongoDB</text>
+<line x1="410" y1="80" x2="538" y2="80" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="416" y="96" class="sub">seismosense db</text>
+<text x="416" y="112" class="mono">sensor_events</text>
+<text x="416" y="128" class="note">device_id · timestamp</text>
+<text x="416" y="142" class="note">accel{x,y,z} · gyro</text>
+<text x="416" y="156" class="note">magnitude · sta_lta</text>
+<text x="416" y="170" class="note">alert: true/false</text>
+<text x="416" y="186" class="sub">open5gs db</text>
+<text x="416" y="200" class="mono">subscribers</text>
+<text x="416" y="214" class="note">shared instance</text>
+
+<!-- Arrow 3 -->
+<line x1="548" y1="130" x2="580" y2="130" class="arr-g"/>
+<text x="564" y="120" text-anchor="middle" class="note">gcloud</text>
+<text x="564" y="142" text-anchor="middle" class="note">scp/ssh</text>
+
+<!-- Colab block -->
+<rect x="580" y="55" width="148" height="160" rx="10" fill="#f0fff4" stroke="#38a169" stroke-width="1.5"/>
+<text x="654" y="75" text-anchor="middle" class="lbl" fill="#276749">Google Colab</text>
+<text x="654" y="90" text-anchor="middle" class="sub">Analysis + ML</text>
+<line x1="590" y1="96" x2="718" y2="96" stroke="#c6f6d5" stroke-width="0.8"/>
+<text x="596" y="112" class="mono">pandas.DataFrame</text>
+<text x="596" y="126" class="mono">STA/LTA plot</text>
+<text x="596" y="140" class="mono">Magnitude series</text>
+<text x="596" y="154" class="mono">Alert timeline</text>
+<text x="596" y="170" class="sub">Anomaly detection</text>
+<text x="596" y="184" class="sub">Correlation with</text>
+<text x="596" y="198" class="sub">5G NF metrics</text>
+<text x="596" y="212" class="sub">Seaborn + Matplotlib</text>
+
+<!-- Arrow 4 -->
+<line x1="728" y1="130" x2="758" y2="130" class="arr"/>
+
+<!-- Dashboard block -->
+<rect x="758" y="55" width="122" height="160" rx="10" fill="#faf5ff" stroke="#805ad5" stroke-width="1.2"/>
+<text x="819" y="75" text-anchor="middle" class="lbl" fill="#553c9a">Dashboard</text>
+<line x1="768" y1="80" x2="870" y2="80" stroke="#e9d8fd" stroke-width="0.8"/>
+<text x="775" y="96" class="sub">STA/LTA chart</text>
+<text x="775" y="110" class="sub">Alarm events</text>
+<text x="775" y="124" class="sub">KPI reports</text>
+<text x="775" y="140" class="sub">5G + seismic</text>
+<text x="775" y="154" class="sub">correlation</text>
+<text x="775" y="168" class="sub">Prometheus</text>
+<text x="775" y="182" class="sub">UPF metrics</text>
+<text x="775" y="198" class="sub">Session count</text>
+
+<!-- STA/LTA explanation row -->
+<rect x="20" y="234" width="430" height="86" rx="8" fill="#fffbeb" stroke="#d69e2e" stroke-width="1.2"/>
+<text x="235" y="252" text-anchor="middle" font="600 11px 'Segoe UI', sans-serif" fill="#744210">STA/LTA Seismic Algorithm</text>
+<line x1="35" y1="258" x2="435" y2="258" stroke="#faf089" stroke-width="0.8"/>
+<text x="35" y="274" class="mono">STA  =  mean(|a(t)|²)  over last  0.5s   (Short-Term Average)</text>
+<text x="35" y="290" class="mono">LTA  =  mean(|a(t)|²)  over last 10.0s   (Long-Term Average)</text>
+<text x="35" y="306" class="mono">ratio = STA / LTA    →    ratio ≥ 3.0  →  SEISMIC ALERT</text>
+
+<!-- JSON payload row -->
+<rect x="468" y="234" width="412" height="86" rx="8" fill="#f7f8fa" stroke="#a0aec0" stroke-width="1"/>
+<text x="674" y="252" text-anchor="middle" font="600 11px 'Segoe UI', sans-serif" fill="#2d3748">JSON Payload (iPhone → GCP)</text>
+<line x1="482" y1="258" x2="870" y2="258" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="482" y="274" class="mono">{ "device_id": "iphone-001",  "timestamp": 1711234567.123,</text>
+<text x="482" y="290" class="mono">  "accel": {"x": 0.01, "y": -0.02, "z": 0.98},</text>
+<text x="482" y="306" class="mono">  "magnitude": 0.985,  "alert": false,  "sta_lta": 1.23 }</text>
+</svg>

@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="480" viewBox="0 0 900 480">
+<style>
+  .lbl  { font: 500 12px 'Segoe UI', sans-serif; fill: #1a1a2e; }
+  .sub  { font: 400 10px 'Segoe UI', sans-serif; fill: #4a5568; }
+  .mono { font: 400 9px  'Courier New', monospace; fill: #2d3748; }
+  .note { font: 400 9px  'Segoe UI', sans-serif; fill: #718096; }
+  .head { font: 600 11px 'Segoe UI', sans-serif; fill: #ffffff; }
+  .kpi  { font: 600 14px 'Segoe UI', sans-serif; }
+</style>
+<defs>
+  <marker id="a" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M1 1L7 4L1 7" fill="none" stroke="#a0aec0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<rect width="900" height="480" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<rect x="0" y="0" width="900" height="40" rx="12" fill="#1a1a2e"/>
+<rect x="0" y="28" width="900" height="12" fill="#1a1a2e"/>
+<text x="24" y="24" font="600 13px 'Segoe UI', sans-serif" fill="#ffffff">5G AI/ML Lab — Traffic Scenarios Overview</text>
+<text x="660" y="24" font="400 10px 'Segoe UI', sans-serif" fill="#a0aec0">8 labeled datasets · ~550 total records</text>
+
+<!-- Column headers -->
+<rect x="16" y="52" width="210" height="22" rx="5" fill="#805ad5"/>
+<text x="121" y="67" text-anchor="middle" class="head">Baseline Scenarios (A–C)</text>
+
+<rect x="236" y="52" width="210" height="22" rx="5" fill="#e53e3e"/>
+<text x="341" y="67" text-anchor="middle" class="head">Anomaly Detection (B)</text>
+
+<rect x="456" y="52" width="210" height="22" rx="5" fill="#3182ce"/>
+<text x="561" y="67" text-anchor="middle" class="head">5G Protocols (HO + Session)</text>
+
+<rect x="676" y="52" width="210" height="22" rx="5" fill="#2c7a7b"/>
+<text x="781" y="67" text-anchor="middle" class="head">QoS + Slicing + IoT</text>
+
+<!-- ─── Scenario A ─── -->
+<rect x="16" y="82" width="210" height="100" rx="8" fill="#faf5ff" stroke="#805ad5" stroke-width="1.2"/>
+<text x="121" y="100" text-anchor="middle" class="lbl" fill="#553c9a">Scenario A — General Traffic</text>
+<line x1="30" y1="105" x2="210" y2="105" stroke="#e9d8fd" stroke-width="0.8"/>
+<text x="30" y="120" class="mono">A_ICMP  · 20 pings</text>
+<text x="165" y="120" class="note">RTT: 0.3–0.5ms</text>
+<text x="30" y="134" class="mono">A_HTTP  · 5 GET</text>
+<text x="165" y="134" class="note">84B – 981KB</text>
+<text x="30" y="148" class="mono">A_DNS   · 4 lookups</text>
+<text x="165" y="148" class="note">3–8ms</text>
+<text x="30" y="162" class="mono">A_BURST · 10 rapid</text>
+<text x="165" y="162" class="note">HTTP concurrency</text>
+
+<!-- ─── Scenario C ─── -->
+<rect x="16" y="192" width="210" height="88" rx="8" fill="#faf5ff" stroke="#805ad5" stroke-width="1.2"/>
+<text x="121" y="210" text-anchor="middle" class="lbl" fill="#553c9a">Scenario C — UPF Throughput</text>
+<line x1="30" y1="215" x2="210" y2="215" stroke="#e9d8fd" stroke-width="0.8"/>
+<text x="30" y="230" class="mono">normal  (0–30s)</text>
+<text x="150" y="230" class="note">HTTP + ICMP</text>
+<text x="30" y="244" class="mono">burst   (30–45s)</text>
+<text x="150" y="244" class="note">8× parallel</text>
+<text x="30" y="258" class="mono">idle    (45–60s)</text>
+<text x="150" y="258" class="note">0 traffic</text>
+<text x="30" y="272" class="mono">burst2  (60–90s)</text>
+<text x="150" y="272" class="note">HTTP+ICMP</text>
+
+<!-- ─── Multi-UE ─── -->
+<rect x="16" y="290" width="210" height="82" rx="8" fill="#faf5ff" stroke="#805ad5" stroke-width="1.2"/>
+<text x="121" y="308" text-anchor="middle" class="lbl" fill="#553c9a">Multi-UE Profiles</text>
+<line x1="30" y1="313" x2="210" y2="313" stroke="#e9d8fd" stroke-width="0.8"/>
+<text x="30" y="328" class="mono">UE1 mobile_broadband</text>
+<text x="30" y="342" class="mono">UE2 iot_sensor</text>
+<text x="180" y="342" class="note">16B/0.5s</text>
+<text x="30" y="356" class="mono">UE3 video_stream</text>
+<text x="180" y="356" class="note">1400B</text>
+
+<!-- ─── Scenario B ─── -->
+<rect x="236" y="82" width="210" height="180" rx="8" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.2"/>
+<text x="341" y="100" text-anchor="middle" class="lbl" fill="#c53030">Scenario B — Labeled Anomaly</text>
+<line x1="250" y1="105" x2="430" y2="105" stroke="#fed7d7" stroke-width="0.8"/>
+<rect x="250" y="110" width="54" height="14" rx="3" fill="#38a169"/>
+<text x="277" y="121" text-anchor="middle" font="500 9px 'Segoe UI', sans-serif" fill="#fff">NORMAL</text>
+<text x="314" y="121" class="note">web + IoT heartbeat</text>
+<rect x="250" y="128" width="90" height="14" rx="3" fill="#fc8181"/>
+<text x="295" y="139" text-anchor="middle" font="500 9px 'Segoe UI', sans-serif" fill="#742a2a">ANOMALY_SCAN</text>
+<text x="346" y="139" class="note">inter_arrival ~3ms</text>
+<rect x="250" y="146" width="90" height="14" rx="3" fill="#fc8181"/>
+<text x="295" y="157" text-anchor="middle" font="500 9px 'Segoe UI', sans-serif" fill="#742a2a">ANOMALY_FLOOD</text>
+<text x="346" y="157" class="note">50 parallel ICMP</text>
+<rect x="250" y="164" width="108" height="14" rx="3" fill="#feb2b2"/>
+<text x="304" y="175" text-anchor="middle" font="500 9px 'Segoe UI', sans-serif" fill="#742a2a">ANOMALY_SLOWLORIS</text>
+<text x="364" y="175" class="note">RTT &gt;300ms</text>
+<rect x="250" y="182" width="90" height="14" rx="3" fill="#feb2b2"/>
+<text x="295" y="193" text-anchor="middle" font="500 9px 'Segoe UI', sans-serif" fill="#742a2a">ANOMALY_EXFIL</text>
+<text x="346" y="193" class="note">1MB+ transfer</text>
+
+<!-- Feature comparison table -->
+<rect x="236" y="205" width="210" height="57" rx="5" fill="#fff5f5" stroke="#fc8181" stroke-width="0.8"/>
+<text x="341" y="220" text-anchor="middle" class="note" fill="#c53030">Discriminating features</text>
+<text x="248" y="234" class="note">inter_arrival_ms :</text>
+<text x="350" y="234" class="note">NORMAL 2000ms vs SCAN 3ms</text>
+<text x="248" y="247" class="note">bytes_per_ms     :</text>
+<text x="350" y="247" class="note">NORMAL 277 vs EXFIL 5115</text>
+<text x="248" y="260" class="note">rtt_zscore max   :</text>
+<text x="350" y="260" class="note">6.93 (statistical outlier)</text>
+
+<!-- ─── Handover ─── -->
+<rect x="456" y="82" width="210" height="130" rx="8" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.2"/>
+<text x="561" y="100" text-anchor="middle" class="lbl" fill="#2b4c7e">Handover Simulation</text>
+<line x1="470" y1="105" x2="650" y2="105" stroke="#bee3f8" stroke-width="0.8"/>
+<text x="470" y="120" class="mono">PRE_HANDOVER</text>
+<text x="575" y="120" class="note">0.389ms avg</text>
+<text x="470" y="134" class="mono">HO_GAP</text>
+<text x="575" y="134" class="note">tunnel down</text>
+<text x="470" y="148" class="mono">HO_COMPLETE</text>
+<text x="575" y="148" class="note">514ms duration</text>
+<text x="470" y="162" class="mono">POST_HANDOVER</text>
+<text x="575" y="162" class="note">+9.8% RTT spike</text>
+<text x="470" y="176" class="mono">STEADY_STATE</text>
+<text x="575" y="176" class="note">0.392ms restored</text>
+<rect x="470" y="183" width="175" height="20" rx="4" fill="#bee3f8"/>
+<text x="558" y="196" text-anchor="middle" font="500 9px 'Segoe UI', sans-serif" fill="#2b4c7e">TS 23.502 · TS 38.300</text>
+
+<!-- ─── Session ─── -->
+<rect x="456" y="222" width="210" height="150" rx="8" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.2"/>
+<text x="561" y="240" text-anchor="middle" class="lbl" fill="#2b4c7e">PDU Session Lifecycle</text>
+<line x1="470" y1="245" x2="650" y2="245" stroke="#bee3f8" stroke-width="0.8"/>
+<text x="470" y="260" class="mono">SESSION_ACTIVE</text>
+<text x="470" y="274" class="mono">DATA_TRANSFER</text>
+<text x="470" y="288" class="mono">SESSION_TEARDOWN</text>
+<text x="470" y="302" class="mono">SESSION_RELEASING</text>
+<text x="470" y="316" class="mono">SESSION_ESTABLISHED</text>
+<rect x="470" y="322" width="175" height="38" rx="4" fill="#bee3f8"/>
+<text x="558" y="337" text-anchor="middle" class="note" fill="#2b4c7e">Teardown: ~2s (nr-cli) / ~22s (pkill)</text>
+<text x="558" y="351" text-anchor="middle" class="note" fill="#2b4c7e">Re-establish: 530ms–3100ms</text>
+
+<!-- ─── QoS ─── -->
+<rect x="676" y="82" width="210" height="110" rx="8" fill="#e6fffa" stroke="#2c7a7b" stroke-width="1.2"/>
+<text x="781" y="100" text-anchor="middle" class="lbl" fill="#2c7a7b">QoS Differentiation</text>
+<line x1="690" y1="105" x2="870" y2="105" stroke="#b2f5ea" stroke-width="0.8"/>
+<rect x="690" y="110" width="30" height="14" rx="3" fill="#3182ce"/>
+<text x="705" y="121" text-anchor="middle" font="500 9px" fill="#fff">eMBB</text>
+<text x="728" y="121" class="note">5QI-9 · HTTP large payload</text>
+<rect x="690" y="128" width="34" height="14" rx="3" fill="#48bb78"/>
+<text x="707" y="139" text-anchor="middle" font="500 9px" fill="#fff">mMTC</text>
+<text x="732" y="139" class="note">5QI-8 · 84B ICMP 0.5s</text>
+<rect x="690" y="146" width="38" height="14" rx="3" fill="#e53e3e"/>
+<text x="709" y="157" text-anchor="middle" font="500 9px" fill="#fff">URLLC</text>
+<text x="736" y="157" class="note">5QI-1 · ping 1.1.1.1</text>
+<rect x="690" y="167" width="175" height="18" rx="4" fill="#b2f5ea"/>
+<text x="778" y="179" text-anchor="middle" font="500 9px 'Segoe UI', sans-serif" fill="#2c7a7b">URLLC SLA &lt;5ms: 83.3% met · TS 23.501</text>
+
+<!-- ─── Slicing ─── -->
+<rect x="676" y="202" width="210" height="100" rx="8" fill="#e6fffa" stroke="#2c7a7b" stroke-width="1.2"/>
+<text x="781" y="220" text-anchor="middle" class="lbl" fill="#2c7a7b">Network Slicing</text>
+<line x1="690" y1="225" x2="870" y2="225" stroke="#b2f5ea" stroke-width="0.8"/>
+<text x="690" y="241" class="mono">SST=1 SD=0x000001</text>
+<text x="820" y="241" class="note">eMBB · 981KB</text>
+<text x="690" y="255" class="mono">SST=2 SD=0x000002</text>
+<text x="820" y="255" class="note">URLLC · SLA</text>
+<text x="690" y="269" class="mono">SST=3 SD=0x000003</text>
+<text x="820" y="269" class="note">mMTC · 40 msg</text>
+<rect x="690" y="277" width="175" height="16" rx="4" fill="#b2f5ea"/>
+<text x="778" y="289" text-anchor="middle" font="500 9px 'Segoe UI', sans-serif" fill="#2c7a7b">3GPP TS 28.530 S-NSSAI</text>
+
+<!-- ─── SeismoSense ─── -->
+<rect x="676" y="312" width="210" height="110" rx="8" fill="#faf5ff" stroke="#805ad5" stroke-width="1.2"/>
+<text x="781" y="330" text-anchor="middle" class="lbl" fill="#553c9a">SeismoSense IoT</text>
+<line x1="690" y1="335" x2="870" y2="335" stroke="#e9d8fd" stroke-width="0.8"/>
+<text x="690" y="350" class="mono">iPhone CoreMotion</text>
+<text x="830" y="350" class="note">100Hz</text>
+<text x="690" y="364" class="mono">AccelX/Y/Z → JSON</text>
+<text x="690" y="378" class="mono">Flask :8080 → MongoDB</text>
+<text x="690" y="392" class="mono">STA/LTA ratio = 3.0</text>
+<rect x="690" y="398" width="175" height="16" rx="4" fill="#e9d8fd"/>
+<text x="778" y="410" text-anchor="middle" font="500 9px 'Segoe UI', sans-serif" fill="#553c9a">mMTC slice target · IoT bearer</text>
+
+<!-- KPI summary row -->
+<rect x="16" y="388" width="432" height="52" rx="8" fill="#f7faff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="232" y="406" text-anchor="middle" font="600 11px 'Segoe UI', sans-serif" fill="#2b4c7e">Observed KPIs across all scenarios</text>
+<text x="30"  y="424" class="note">ICMP RTT baseline</text><text x="30"  y="436" class="kpi" fill="#3182ce" font-size="12">0.39ms</text>
+<text x="110" y="424" class="note">Handover time</text><text x="110"  y="436" class="kpi" fill="#3182ce" font-size="12">514ms</text>
+<text x="180" y="424" class="note">URLLC SLA met</text><text x="180" y="436" class="kpi" fill="#38a169" font-size="12">83.3%</text>
+<text x="260" y="424" class="note">Anomaly zscore max</text><text x="260" y="436" class="kpi" fill="#e53e3e" font-size="12">6.93</text>
+<text x="350" y="424" class="note">Scan/Normal ratio</text><text x="350" y="436" class="kpi" fill="#e53e3e" font-size="12">666×</text>
+</svg>

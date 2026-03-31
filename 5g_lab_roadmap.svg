@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380">
+<style>
+  .lbl  { font: 500 12px 'Segoe UI', sans-serif; fill: #1a1a2e; }
+  .sub  { font: 400 10px 'Segoe UI', sans-serif; fill: #4a5568; }
+  .note { font: 400 9px  'Segoe UI', sans-serif; fill: #718096; }
+  .head { font: 600 12px 'Segoe UI', sans-serif; fill: #ffffff; }
+  .chk  { font: 500 10px 'Segoe UI', sans-serif; }
+</style>
+
+<rect width="900" height="380" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<rect x="0" y="0" width="900" height="40" rx="12" fill="#1a1a2e"/>
+<rect x="0" y="28" width="900" height="12" fill="#1a1a2e"/>
+<text x="24" y="24" font="600 13px 'Segoe UI', sans-serif" fill="#ffffff">5G AI/ML Lab — Development Roadmap</text>
+
+<!-- Timeline spine -->
+<line x1="50" y1="72" x2="870" y2="72" stroke="#e2e8f0" stroke-width="2"/>
+
+<!-- Phase dots -->
+<circle cx="200" cy="72" r="8" fill="#38a169"/>
+<circle cx="200" cy="72" r="4" fill="#ffffff"/>
+<circle cx="500" cy="72" r="8" fill="#d69e2e"/>
+<circle cx="500" cy="72" r="4" fill="#ffffff"/>
+<circle cx="780" cy="72" r="8" fill="#805ad5"/>
+<circle cx="780" cy="72" r="4" fill="#ffffff"/>
+
+<!-- Phase 1 header -->
+<rect x="56" y="82" width="286" height="26" rx="6" fill="#38a169"/>
+<text x="199" y="99" text-anchor="middle" class="head">Phase 1 — Complete ✓</text>
+
+<!-- Phase 1 items -->
+<rect x="56" y="116" width="286" height="190" rx="8" fill="#f0fff4" stroke="#38a169" stroke-width="1.2"/>
+
+<text x="80" y="137" class="chk" fill="#276749">✓</text><text x="96" y="137" class="sub">Open5GS Core (7 NFs) deployment</text>
+<text x="80" y="153" class="chk" fill="#276749">✓</text><text x="96" y="153" class="sub">UERANSIM gNB + UE + nr-binder</text>
+<text x="80" y="169" class="chk" fill="#276749">✓</text><text x="96" y="169" class="sub">gtp5g bypass discovery + CSV workaround</text>
+<text x="80" y="185" class="chk" fill="#276749">✓</text><text x="96" y="185" class="sub">8 labeled traffic scenarios</text>
+<text x="80" y="201" class="chk" fill="#276749">✓</text><text x="96" y="201" class="sub">NAT/IP forwarding configuration</text>
+<text x="80" y="217" class="chk" fill="#276749">✓</text><text x="96" y="217" class="sub">Colab remote management (3 notebooks)</text>
+<text x="80" y="233" class="chk" fill="#276749">✓</text><text x="96" y="233" class="sub">SeismoSense Flask + STA/LTA integration</text>
+<text x="80" y="249" class="chk" fill="#276749">✓</text><text x="96" y="249" class="sub">Operations + fault management cells</text>
+<text x="80" y="265" class="chk" fill="#276749">✓</text><text x="96" y="265" class="sub">Handover / Session / QoS / Slicing tests</text>
+<text x="80" y="281" class="chk" fill="#276749">✓</text><text x="96" y="281" class="sub">Feature engineering + anomaly dataset</text>
+
+<rect x="70" y="298" width="258" height="18" rx="4" fill="#c6f6d5"/>
+<text x="199" y="310" text-anchor="middle" class="note" fill="#276749">~550 records · 8 CSV files · Pandas + Matplotlib</text>
+
+<!-- Phase 2 header -->
+<rect x="356" y="82" width="286" height="26" rx="6" fill="#d69e2e"/>
+<text x="499" y="99" text-anchor="middle" class="head">Phase 2 — In Progress ◐</text>
+
+<!-- Phase 2 items -->
+<rect x="356" y="116" width="286" height="190" rx="8" fill="#fffbeb" stroke="#d69e2e" stroke-width="1.2"/>
+
+<text x="378" y="137" class="chk" fill="#744210">◐</text><text x="396" y="137" class="sub">3GPP security hardening (NIA2/NEA2)</text>
+<text x="378" y="153" class="chk" fill="#744210">◐</text><text x="396" y="153" class="sub">SUCI/ECIES X25519 key provisioning</text>
+<text x="378" y="169" class="chk" fill="#744210">◐</text><text x="396" y="169" class="sub">Full network slicing (SST=1/2/3 subnets)</text>
+<text x="378" y="185" class="chk" fill="#744210">◐</text><text x="396" y="185" class="sub">Linux TC QoS shaping per slice</text>
+<text x="378" y="201" class="chk" fill="#744210">◐</text><text x="396" y="201" class="sub">ML pipeline (Isolation Forest · XGBoost)</text>
+<text x="378" y="217" class="chk" fill="#744210">◐</text><text x="396" y="217" class="sub">Prometheus KPI all NFs (TS 28.554)</text>
+<text x="378" y="233" class="chk" fill="#744210">◐</text><text x="396" y="233" class="sub">Multi-subscriber registration (UE2/UE3)</text>
+<text x="378" y="249" class="chk" fill="#744210">◐</text><text x="396" y="249" class="sub">LSTM time-series throughput prediction</text>
+<text x="378" y="265" class="chk" fill="#744210">◐</text><text x="396" y="265" class="sub">SeismoSense mMTC slice binding</text>
+<text x="378" y="281" class="chk" fill="#744210">◐</text><text x="396" y="281" class="sub">Log rotation + structured logging</text>
+
+<rect x="370" y="298" width="258" height="18" rx="4" fill="#fefcbf"/>
+<text x="499" y="310" text-anchor="middle" class="note" fill="#744210">3GPP TS 23.501 · TS 33.501 · TS 28.554</text>
+
+<!-- Phase 3 header -->
+<rect x="656" y="82" width="226" height="26" rx="6" fill="#805ad5"/>
+<text x="769" y="99" text-anchor="middle" class="head">Phase 3 — Vision ◇</text>
+
+<!-- Phase 3 items -->
+<rect x="656" y="116" width="226" height="190" rx="8" fill="#faf5ff" stroke="#805ad5" stroke-width="1.2"/>
+
+<text x="676" y="137" class="chk" fill="#553c9a">◇</text><text x="692" y="137" class="sub">SDR hardware (USRP B210)</text>
+<text x="676" y="153" class="chk" fill="#553c9a">◇</text><text x="692" y="153" class="sub">srsRAN / real NR air interface</text>
+<text x="676" y="169" class="chk" fill="#553c9a">◇</text><text x="692" y="169" class="sub">Multi-VM distributed lab</text>
+<text x="676" y="185" class="chk" fill="#553c9a">◇</text><text x="692" y="185" class="sub">Real X2/Xn dual-gNB handover</text>
+<text x="676" y="201" class="chk" fill="#553c9a">◇</text><text x="692" y="201" class="sub">Pub/Sub → Dataflow → BigQuery</text>
+<text x="676" y="217" class="chk" fill="#553c9a">◇</text><text x="692" y="217" class="sub">Vertex AI real-time inference</text>
+<text x="676" y="233" class="chk" fill="#553c9a">◇</text><text x="692" y="233" class="sub">gtp5g kernel patch for capture</text>
+<text x="676" y="249" class="chk" fill="#553c9a">◇</text><text x="692" y="249" class="sub">BTF eBPF CO-RE implementation</text>
+<text x="676" y="265" class="chk" fill="#553c9a">◇</text><text x="692" y="265" class="sub">Physical USIM + iPhone 5G bearer</text>
+<text x="676" y="281" class="chk" fill="#553c9a">◇</text><text x="692" y="281" class="sub">Edge ML deployment</text>
+
+<rect x="670" y="298" width="198" height="18" rx="4" fill="#e9d8fd"/>
+<text x="769" y="310" text-anchor="middle" class="note" fill="#553c9a">SDR · GCP Pub/Sub · Vertex AI</text>
+
+<!-- Bottom legend -->
+<rect x="56" y="330" width="786" height="36" rx="6" fill="#f7f8fa" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="100" cy="348" r="6" fill="#38a169"/>
+<text x="112" y="352" class="note">Phase 1: Complete (✓)</text>
+<circle cx="250" cy="348" r="6" fill="#d69e2e"/>
+<text x="262" y="352" class="note">Phase 2: In progress (◐)</text>
+<circle cx="420" cy="348" r="6" fill="#805ad5"/>
+<text x="432" y="352" class="note">Phase 3: Vision (◇)</text>
+<text x="600" y="352" class="note">Open5GS v2.7.6 · UERANSIM · GCP europe-west4-a · Google Colab</text>
+</svg>
